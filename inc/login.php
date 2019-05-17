@@ -1,12 +1,12 @@
 <?php 
 session_start();
-    if ( isset(  $_POST['login']) ) {
+    if ( isset(  $_POST[login]) ) {
         include_once 'dbh.php';
-        echo $db_server;
-        $email_address = mysqli_real_escape_string( $_POST['email_address'] );
-        $password = mysqli_real_escape_string( $_POST['password'] );
+        
+        $email_address = mysqli_real_escape_string( $connection,  $_POST['email_address'] );
+        $password = mysqli_real_escape_string( $connection, $_POST['password'] );
         echo $password;
-        echo $email_address;
+        
         //Handle errors
         //Check if inputs are empty
         if ( empty( $email_address ) || empty( $password ) ) {
