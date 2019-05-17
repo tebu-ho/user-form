@@ -5,7 +5,6 @@ session_start();
         
         $email_address = mysqli_real_escape_string( $connection,  $_POST['email_address'] );
         $password = mysqli_real_escape_string( $connection, $_POST['password'] );
-        echo $password;
         
         //Handle errors
         //Check if inputs are empty
